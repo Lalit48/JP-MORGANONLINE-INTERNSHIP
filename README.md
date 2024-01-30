@@ -45,3 +45,27 @@ Remember to always rely on official and trustworthy sources when gathering infor
       The clearInterval statement in the getDataFromServer method may stop the data fetching after 1000 iterations to prevent an infinite loop.
 
 * Task 3 (Display data visually for traders.patch)
+
+  - DataManipulator.ts Changes:
+    Row Interface Modification:
+    The Row interface has been updated to include new properties such as price_abc, price_def, ratio, upper_bound, lower_bound, and trigger_alert. These changes allow for a more comprehensive representation of the data.
+  
+  - generateRow Method Modification:
+    The generateRow method has been modified to generate a single Row instead of an array of Rows. This updated Row now includes the calculated values for the newly added properties. This change improves the efficiency and accuracy of the data manipulation process.
+  
+  - Graph.tsx Changes:
+    Schema Modification:
+    The schema definition in Graph.tsx has been adjusted to incorporate the new properties: price_abc, price_def, ratio, upper_bound, lower_bound, and trigger_alert. This modification ensures that the schema accurately reflects the updated structure of the Row.
+  
+  - Update in componentDidUpdate:
+    The componentDidUpdate method has been updated to pass an array containing the generated row to this.table.update. This change ensures that the latest data is properly updated and displayed in the graph component.
+  
+  - General Information:
+    The changes made in DataManipulator.ts indicate a refactoring of the generateRow method to better represent the data structure and handle additional properties. These modifications may have been implemented in response to changes in the expected data format.
+    
+    In Graph.tsx, the adjustments to the schema and the componentDidUpdate method are made to accommodate the modified structure of the Row. These changes ensure that the graph component can accurately display and visualize the updated data.
+  
+  - Considerations:
+    The introduction of the properties upper_bound, lower_bound, and trigger_alert suggests that these changes are aimed at handling alert triggers based on certain conditions. These new properties provide the necessary information for implementing dynamic alerts.
+    
+    Overall, these changes indicate a need for a more detailed and dynamic representation of the data, as evidenced by the addition of new properties in both DataManipulator and Graph. These modifications enhance the functionality and flexibility of the data manipulation and visualization processes.
