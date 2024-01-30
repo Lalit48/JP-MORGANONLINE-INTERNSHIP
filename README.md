@@ -24,4 +24,24 @@ Remember to always rely on official and trustworthy sources when gathering infor
 
 * Task 2 (Use JPMorgan Chase & Co. frameworks and tools)
 
+   - App.tsx Changes:
+      Added a new state variable called showGraph with an initial value of false.
+      Modified the renderGraph method to only render the Graph component if the showGraph state is true.
+      Updated the getDataFromServer method to fetch new data from the server and update the state. It also sets the showGraph state to true. The data fetching is done repeatedly using setInterval until it reaches a limit of 1000 iterations.
+  
+   - Graph.tsx Changes:
+      Added a console.log('rendering') statement in the componentDidMount method for debugging purposes.
+      Removed an unnecessary check for the existence of a worker in the window.perspective object in the componentDidMount method.
+      Updated the Perspective configurations:
+        Set the view to 'y_line'.
+        Defined column-pivots, row-pivots, columns, and aggregates attributes for the <perspective-viewer> element.
+  
+   - General Info:
+      The changes made in App.tsx indicate that the graph's display is now conditional based on the showGraph state.
+      The changes in Graph.tsx involve the initialization and configuration of the Perspective library, specifying how the data is visualized in the graph.
+  
+   - Notes:
+      The console.log statements, especially the one in Graph.tsx, are likely used for debugging purposes and can be removed or adjusted based on the developer's needs.
+      The clearInterval statement in the getDataFromServer method may stop the data fetching after 1000 iterations to prevent an infinite loop.
+
 * Task 3 (Display data visually for traders.patch)
